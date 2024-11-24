@@ -1,0 +1,171 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(242, 194, 242);
+    text-transform: lowercase;
+}
+
+header {
+    width: 100%;
+    background-color: navy;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+h1 a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+h5 a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+main {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#search-container {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center; 
+    position: relative;
+}
+
+#search-bar {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#add-artist-button {
+    padding: 10px 20px;
+    margin-left: 10px; 
+    border: none;
+    background-color: rgb(36, 36, 157);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+#add-artist-button:hover {
+    background-color: rgb(3, 3, 81);
+}
+
+#suggestions {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+    background-color: rgb(36, 36, 157);
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.suggestion-item:hover {
+    background-color: rgb(3, 3, 81);
+}
+
+.highlight {
+    background-color: #d0d0d0;
+}
+
+.error {
+    color: red;
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 4px;
+}
+
+.artist-list {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.artist-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+    width: 150px;
+}
+
+.artist-card:hover {
+    background-color: lightblue;
+}
+
+.artist-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.artist-card .trash-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: red;
+}
+
+.artist-info, .top-tracks {
+    margin-top: 20px;
+}
+
+.track-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+#generate-playlist-button {
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    background-color: green;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+#generate-playlist-button:hover {
+    background-color: darkgreen;
+}

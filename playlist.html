@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Playlist</title>
+    <link rel="stylesheet" href="integratedartist.css">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const songsQuery = params.get('songs');
+            
+            if (songsQuery) {
+                const songs = songsQuery.split('|').map(track => {
+                    const [name, album, imageUrl] = track.split(':').map(decodeURIComponent);
+                    return {
+                        name,
+                        album: {
+                            name: album,
+                            images: [{ url: imageUrl }]
+                        }
+                    };
+                });
+    
+                displayRelatedSongs(songs);
+            } else {
+                console.error("No songs found in URL parameters.");
+            }
+        });
+    
+        function displayRelatedSongs(songs) {
+            const relatedSongsContainer = document.getElementById('related-songs');
+            
+            relatedSongsContainer.innerHTML = songs.map(track => `
+                <div class="grid-rec-container">
+                    <div class="grid-item related-tracks" id="related-tracks">
+                        <div><strong>${track.name}</strong></div>
+                        <div>Album: ${track.album.name}</div>
+                        <img src="${track.album.images[0].url}" alt="${track.name}" style="width: 100px; height: 100px; object-fit: cover;">
+                    </div>
+                </div>
+            `).join('');
+        }
+    </script>
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back();">←</button>
+    <main>
+        <div id="related-songs"></div>
+    </main>
+    <script src="integratedhome.js"></script>
+</body>
+</html>

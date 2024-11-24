@@ -1,0 +1,115 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(242, 194, 242);
+}
+
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: navy;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    font-size: 20px;
+    color:white;
+}
+
+.back-button:hover {
+    background-color:  rgb(3, 3, 81);
+}
+
+.back-button img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-rec-container {
+    display: grid;
+    grid-template-columns: 350px;
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.artist-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#artist-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#artist-name, #artist-genres, #artist-followers {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    width: 80%;
+    max-width: 400px;
+    /* border-radius: 4px; */
+}
+
+.top-tracks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.related-tracks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.track-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.track-album-cover {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.track-info {
+    text-align: left;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+}
